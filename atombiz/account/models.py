@@ -206,42 +206,56 @@ class Tax(models.Model):
         return self.name
 
 
-# class Journal(models.Model):
-#     TYPES = (
-#         ('sale', 'Sale'),
-#         ('sale_refund', 'Sale refund'),
-#         ('purchase', 'Purchase'),
-#         ('purchase_refund', 'Purchase refund'),
-#         ('cash', 'Cash'),
-#         ('bank', 'Bank and checks'),
-#         ('general', 'General'),
-#         ('situation', 'Opening/Closing situation')
-#     )
+class Journal(models.Model):
+    TYPES = (
+        ('sale', 'Sale'),
+        ('sale_refund', 'Sale refund'),
+        ('purchase', 'Purchase'),
+        ('purchase_refund', 'Purchase refund'),
+        ('cash', 'Cash'),
+        ('bank', 'Bank and checks'),
+        ('general', 'General'),
+        ('situation', 'Opening/Closing situation')
+    )
 
-#     with_last_closing_balance = models.BooleanField('Opening with last closing balance', default=False)
-#     name = models.CharField(max_length=64, unique=True)
-#     code = models.CharField(max_length=5, unique=True)
-#     type = models.CharField(max_length=32, choices=TYPES)
-#     account_type = models.ManyToManyField(AccountType)
-#     account_control = models.ManyToManyField(Account)
-#     default_credit_account = models.ForeignKey(Account)
-#     default_debit_account = models.ForeignKey(Account)
-#     centralization = models.BooleanField('centralized counterpart')
-#     update_posted = models.BooleanField('allow cancelling entries')
-#     group_invoice_lines = models.BooleanField()
-#     sequence = models.ForeignKey(Sequence)
-#     user = models.ForeignKey(User)
-#     groups = models.ManyToManyField(Group)
-#     currency = models.ForeignKey(Currency)
-#     entry_posted = models.BooleanField()
-#     allow_date = models.BooleanField('check date in period')
-#     profit_account = models.ForeignKey(Account)
-#     loss_account = models.ForeignKey(Account)
-#     internal_account = models.ForeignKey(Account, verbose_name='internal transfers account')
-#     cash_control = models.BooleanField(default=False)
+    with_last_closing_balance = models.BooleanField('Opening with last closing balance', default=False)
+    name = models.CharField('journal name', max_length=64, unique=True)
+    code = models.CharField(max_length=5, unique=True,
+            help_text='The code will be displayed on reports.')
+    type = models.CharField(max_length=32, choices=TYPES,
+            help_text="""Select 'Sale' for customer invoices journals.<br />
+            Select 'Purchase' for supplier invoices journals.<br />
+            Select 'Cash' or 'Bank' for journals that are used in customer or supplier payments.<br />
+            Select 'General' for miscellaneious operations journals.<br />
+            Select 'Opening/Closing Situation' for entries generated for new fiscal years.""")
+    account_type = models.ManyToManyField(AccountType, verbose_name='type controls')
+    account_control = models.ManyToManyField(Account, verbose_name='account', related_name='journal_control',
+            limit_choices_to={'type__in': ['other', 'receivable', 'payable', 'liquidity', 'consolidation']})
+    default_credit_account = models.ForeignKey(Account, related_name='journal_default_credit',
+            help_text='It acts as a default account for credit amount.',
+            limit_choices_to={'type__in': ['other', 'receivable', 'payable', 'liquidity', 'consolidation', 'closed']})
+    default_debit_account = models.ForeignKey(Account, related_name='journal_default_debit',
+            help_text='It acts as a default account for debit amount.',
+            limit_choices_to={'type__in': ['other', 'receivable', 'payable', 'liquidity', 'consolidation', 'closed']})
+    centralization = models.BooleanField('centralized counterpart',
+            help_text="Check this box to determine that each entry of this journal won't create a new counterpart but will share the same counterpart. This is used in fiscal year closing.")
+    update_posted = models.BooleanField('allow cancelling entries',
+            help_text='Check this box if you want to allow the cancellation the entries related to this journal or of the invoice related to this journal.')
+    group_invoice_lines = models.BooleanField(help_text='If this box is checked, the system will try to group the accounting lines when generating them from invoices.')
+    sequence = models.ForeignKey(Sequence, verbose_name='entry sequence',
+            help_text='This field contains the information related to the numbering of the journal entries of this journal.')
+    user = models.ForeignKey(User, help_text='The user responsible for this journal.')
+    groups = models.ManyToManyField(Group)
+    currency = models.ForeignKey(Currency, help_text='The currency used to enter statement.')
+    entry_posted = models.BooleanField('autopost created moves', help_text='Check this box to automatically post entries of this journal. Note that legally, some entries may be automatically posted when the source document is validated (Invoices), whatever the status of this field.')
+    allow_date = models.BooleanField('check date in period', help_text='If set to True then do not accept the entry if the entry date is not into the period dates.')
+    profit_account = models.ForeignKey(Account, related_name='journal_profit')
+    loss_account = models.ForeignKey(Account, related_name='journal_loss')
+    internal_account = models.ForeignKey(Account, verbose_name='internal transfers account', related_name='journal_internal')
+    cash_control = models.BooleanField(default=False, help_text='If you want the journal should be control at opening/closing, check this option.')
 
-#     class Meta:
-#         ordering = ['-code']
+    class Meta:
+        ordering = ['-code']
 
-#     def __unicode__(self):
-#         return self.name
+    def __unicode__(self):
+        return self.name

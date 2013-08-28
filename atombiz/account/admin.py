@@ -13,20 +13,9 @@ class AccountTypeAdmin(admin.ModelAdmin):
     list_filter = ['report_type']
 
 
-class AccountAdmin(admin.ModelAdmin):
-    pass
-
-
-class TaxCodeAdmin(admin.ModelAdmin):
-    pass
-
-
-class TaxAdmin(admin.ModelAdmin):
-    pass
-
-
 admin.site.register(FinancialReport, FinancialReportAdmin)
 admin.site.register(AccountType, AccountTypeAdmin)
-admin.site.register(Account, AccountAdmin)
-admin.site.register(TaxCode, TaxCodeAdmin)
-admin.site.register(Tax, TaxAdmin)
+admin.site.register(Account)
+admin.site.register(TaxCode)
+admin.site.register(Tax)
+admin.site.register(Journal)
