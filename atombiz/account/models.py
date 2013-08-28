@@ -40,27 +40,39 @@ class FinancialReport(models.Model):
         return self.name
 
 
-# class AccountType(models.Model):
-#     CLOSE_METHODS = (
-#         ('balance', 'Balance'),
-#         ('detail', 'Detail'),
-#         ('unreconciled', 'Unreconciled')
-#     )
-#     REPORT_TYPES = (
-#         ('income', 'Profit & Loss (Income account)'),
-#         ('expense', 'Profit & Loss (Expense account)'),
-#         ('asset', 'Balance Sheet (Asset account)'),
-#         ('liability', 'Balance Sheet (Liability account)')
-#     )
+class AccountType(models.Model):
+    CLOSE_METHODS = (
+        ('none', 'None'),
+        ('balance', 'Balance'),
+        ('detail', 'Detail'),
+        ('unreconciled', 'Unreconciled')
+    )
+    REPORT_TYPES = (
+        ('none', '/'),
+        ('income', 'Profit & Loss (Income account)'),
+        ('expense', 'Profit & Loss (Expense account)'),
+        ('asset', 'Balance Sheet (Asset account)'),
+        ('liability', 'Balance Sheet (Liability account)')
+    )
 
-#     name = models.CharField(max_length=64)
-#     code = models.CharField(max_length=32)
-#     close_method = models.CharField(max_length=16, choices=CLOSE_METHODS)
-#     report_type = models.CharField(max_length=16, choices=REPORT_TYPES)
-#     note = models.TextField(blank=True)
+    name = models.CharField(max_length=64)
+    code = models.CharField(max_length=32)
+    close_method = models.CharField(max_length=16, choices=CLOSE_METHODS, default='none',
+            help_text="""'None' means that nothing will be done.
+            'Balance' will general be used for cash accounts.
+            'Detail' will copy each existing journal item of the previous year, even the reconciled ones.
+            'Unreconciled' will copy only the journal items that were unreconciled on the first day of the new fiscal year."""
+        )
+    report_type = models.CharField(max_length=16, choices=REPORT_TYPES, default='none',
+            help_text='This field is used to generate legal reports: profit and loss, balance sheet.'
+        )
+    note = models.TextField('description', blank=True)
 
-#     def __unicode__(self):
-#         return self.name
+    class Meta:
+        ordering = ['code']
+
+    def __unicode__(self):
+        return self.name
 
 
 # class Account(models.Model):
