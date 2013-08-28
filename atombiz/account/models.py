@@ -121,17 +121,23 @@ class Account(models.Model):
         return self.name
 
 
-# class TaxCode(models.Model):
-#     name = models.CharField(max_length=64)
-#     code = models.CharField(max_length=64)
-#     info = models.TextField(blank=True)
-#     parent = models.ForeignKey('self')
-#     sign = models.FloatField()
-#     not_printable = models.BooleanField()
-#     sequence = models.IntegerField()
+class TaxCode(models.Model):
+    name = models.CharField('case name', max_length=64)
+    code = models.CharField('case code', max_length=64, blank=True)
+    info = models.TextField('description', blank=True)
+    parent = models.ForeignKey('self', null=True, blank=True)
+    sign = models.FloatField('coefficent for parent', default=1.0,
+            help_text='You can specify here the coefficient that will be used when consolidating the amount of this case into its parent. For example, set 1/-1 if you want to add/substract it.')
+    not_printable = models.BooleanField('not printable in invoice', default=False,
+            help_text="Check this box if you don't want any tax related to this tax code to appear in invoices.")
+    sequence = models.IntegerField(null=True, blank=True,
+            help_text="Determine the display order in the report 'Accounting \\ Reporting \\ Generic Reporting \\ Taxes \\ Taxes Report'")
+    
+    class Meta:
+        ordering = ['code']
 
-#     def __unicode__(self):
-#         return self.name
+    def __unicode__(self):
+        return self.name
 
 
 # class Tax(models.Model):

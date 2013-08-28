@@ -17,6 +17,11 @@ class AccountAdmin(admin.ModelAdmin):
     pass
 
 
+class TaxCodeAdmin(admin.ModelAdmin):
+    pass
+
+
 admin.site.register(FinancialReport, FinancialReportAdmin)
 admin.site.register(AccountType, AccountTypeAdmin)
 admin.site.register(Account, AccountAdmin)
+admin.site.register(TaxCode, TaxCodeAdmin)
