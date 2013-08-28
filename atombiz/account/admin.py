@@ -13,5 +13,10 @@ class AccountTypeAdmin(admin.ModelAdmin):
     list_filter = ['report_type']
 
 
+class AccountAdmin(admin.ModelAdmin):
+    pass
+
+
 admin.site.register(FinancialReport, FinancialReportAdmin)
 admin.site.register(AccountType, AccountTypeAdmin)
+admin.site.register(Account, AccountAdmin)

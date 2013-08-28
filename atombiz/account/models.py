@@ -58,11 +58,12 @@ class AccountType(models.Model):
     name = models.CharField(max_length=64)
     code = models.CharField(max_length=32)
     close_method = models.CharField(max_length=16, choices=CLOSE_METHODS, default='none',
-            help_text="""'None' means that nothing will be done.
-            'Balance' will general be used for cash accounts.
-            'Detail' will copy each existing journal item of the previous year, even the reconciled ones.
-            'Unreconciled' will copy only the journal items that were unreconciled on the first day of the new fiscal year."""
-        )
+            help_text="""Set here the method that will be used to generate the end of year journal entries for all the accounts of this type.<br />
+            <br />
+            'None' means that nothing will be done.<br />
+            'Balance' will general be used for cash accounts.<br />
+            'Detail' will copy each existing journal item of the previous year, even the reconciled ones.<br />
+            'Unreconciled' will copy only the journal items that were unreconciled on the first day of the new fiscal year.""")
     report_type = models.CharField(max_length=16, choices=REPORT_TYPES, default='none',
             help_text='This field is used to generate legal reports: profit and loss, balance sheet.'
         )
@@ -75,36 +76,49 @@ class AccountType(models.Model):
         return self.name
 
 
-# class Account(models.Model):
-#     TYPES = (
-#         ('view', 'View'),
-#         ('other', 'Regular'),
-#         ('receivable', 'Receivable'),
-#         ('payable', 'Payable'),
-#         ('liquidity', 'Liquidity'),
-#         ('consolidation', 'Consolidation'),
-#         ('closed', 'Closed')
-#     )
-#     CURRENCY_MODES = (
-#         ('current', 'At date'),
-#         ('average', 'Average rate')
-#     )
+class Account(models.Model):
+    TYPES = (
+        ('view', 'View'),
+        ('other', 'Regular'),
+        ('receivable', 'Receivable'),
+        ('payable', 'Payable'),
+        ('liquidity', 'Liquidity'),
+        ('consolidation', 'Consolidation'),
+        ('closed', 'Closed')
+    )
+    CURRENCY_MODES = (
+        ('current', 'At date'),
+        ('average', 'Average rate')
+    )
 
-#     name = models.CharField(max_length=256)
-#     currency = models.ForeignKey(Currency)
-#     code = models.CharField(max_length=64)
-#     type = models.CharField(max_length=16, choices=TYPES, default='other')
-#     account_type = models.ForeignKey(AccountType)
-#     financial_report = models.ManyToManyField(FinancialReport)
-#     parent = models.ForeignKey('self')
-#     reconcile = models.BooleanField('allow reconciliation', default=False)
-#     shortcut = models.CharField(max_length=16)
-#     note = models.TextField(blank=True)
-#     active = models.BooleanField(default=True)
-#     currency_mode = models.CharField(max_length=8, choices=CURRENCY_MODES, default='current')
+    name = models.CharField(max_length=256)
+    currency = models.ForeignKey(Currency, null=True, blank=True,
+            help_text='Forces all moves for this account to have this secondary currency.')
+    code = models.CharField(max_length=64, unique=True)
+    type = models.CharField('internal type', max_length=16, choices=TYPES, default='other',
+            help_text="""The 'Internal Type' is used for features available on
+            different types of accounts: views can not have journal items, consolidation are accounts that
+            can have children accounts for multi-company consolidations, payable/receivable are for
+            partners accounts (for debit/credit computations), closed for depreciated accounts.""")
+    user_type = models.ForeignKey(AccountType, verbose_name='account type',
+            help_text='Account Type is used for information purpose, to generate country-specific legal reports, and set the rules to close a fiscal year and generate opening entries.')
+    financial_report = models.ManyToManyField(FinancialReport)
+    parent = models.ForeignKey('self', on_delete=models.CASCADE)
+    reconcile = models.BooleanField('allow reconciliation', default=False,
+            help_text='Check this box if this account allows reconciliation of journal items.')
+    shortcut = models.CharField(max_length=16)
+    note = models.TextField('internal notes', blank=True)
+    active = models.BooleanField(default=True,
+            help_text='If the active field is set to False, it will allow you to hide the account without removing it.')
+    currency_mode = models.CharField(max_length=8, choices=CURRENCY_MODES, default='current',
+            help_text="""This will select how the current currency rate for outgoing transactions is computed.
+            In most countries the legal method is "average" but only a few software systems are able to
+            manage this. So if you import from another software system you may have to use the rate at date.
+            Incoming transactions always use the rate at date.
+            """)
 
-#     def __unicode__(self):
-#         return self.name
+    def __unicode__(self):
+        return self.name
 
 
 # class TaxCode(models.Model):
