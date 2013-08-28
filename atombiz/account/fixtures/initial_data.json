@@ -1,0 +1,91 @@
+[
+    {
+        "model": "account.financialreport",
+        "pk": 1,
+        "fields": {
+            "name": "Profit and Loss",
+            "sign": -1,
+            "type": "sum"
+        }
+    },
+    {
+        "model": "account.financialreport",
+        "pk": 2,
+        "fields": {
+            "name": "Income",
+            "sign": -1,
+            "parent": 1,
+            "display_detail": "detail_with_hierarchy"
+        }
+    },
+    {
+        "model": "account.financialreport",
+        "pk": 3,
+        "fields": {
+            "name": "Expense",
+            "sign": -1,
+            "parent": 1,
+            "display_detail": "detail_with_hierarchy",
+            "type": "account_type"
+        }
+    },
+    {
+        "model": "account.financialreport",
+        "pk": 4,
+        "fields": {
+            "name": "Balance Sheet",
+            "type": "sum"
+        }
+    },
+    {
+        "model": "account.financialreport",
+        "pk": 5,
+        "fields": {
+            "name": "Assets",
+            "parent": 4,
+            "display_detail": "detail_with_hierarchy",
+            "type": "account_type"
+        }
+    },
+    {
+        "model": "account.financialreport",
+        "pk": 6,
+        "fields": {
+            "name": "Liability",
+            "parent": 4,
+            "display_detail": "no_detail",
+            "type": "sum"
+        }
+    },
+    {
+        "model": "account.financialreport",
+        "pk": 7,
+        "fields": {
+            "name": "Liability",
+            "parent": 4,
+            "display_detail": "detail_with_hierarchy",
+            "type": "sum"
+        }
+    },
+    {
+        "model": "account.financialreport",
+        "pk": 8,
+        "fields": {
+            "name": "Profit (Loss) to report",
+            "parent": 6,
+            "display_detail": "no_detail",
+            "type": "account_type",
+            "account_report": 4
+        }
+    },
+    {
+        "model": "account.financialreport",
+        "pk": 6,
+        "fields": {
+            "name": "Liability",
+            "parent": 4,
+            "display_detail": "detail_with_hierarchy",
+            "type": "sum"
+        }
+    }
+]
