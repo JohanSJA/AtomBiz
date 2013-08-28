@@ -140,44 +140,70 @@ class TaxCode(models.Model):
         return self.name
 
 
-# class Tax(models.Model):
-#     TYPES = (
-#         ('percent', 'Percentage'),
-#         ('fixed', 'Fixed'),
-#         ('balance', 'Balance')
-#     )
-#     TYPE_TAX_USES = (
-#         ('sale', 'Sale'),
-#         ('purchase', 'Purchase'),
-#         ('all', 'All')
-#     )
+class Tax(models.Model):
+    TYPES = (
+        ('percent', 'Percentage'),
+        ('fixed', 'Fixed'),
+        ('balance', 'Balance')
+    )
+    TYPE_TAX_USES = (
+        ('sale', 'Sale'),
+        ('purchase', 'Purchase'),
+        ('all', 'All')
+    )
 
-#     name = models.CharField(max_length=64, unique=True)
-#     sequence = models.IntegerField(default=1)
-#     amount = models.FloatField(default=0)
-#     active = models.BooleanField(default=True)
-#     type = models.CharField(max_length=8, choices=TYPES, default='percent')
-#     account_collected = models.ForeignKey(Account)
-#     account_paid = models.ForeignKey(Account)
-#     parent = models.ForeignKey('self')
-#     child_depend = models.BooleanField()
-#     base_code = models.ForeignKey(TaxCode)
-#     tax_code = models.ForeignKey(TaxCode)
-#     base_sign = models.FloatField(default=1)
-#     tax_sign = models.FloatField(default=1)
-#     ref_base_code = models.ForeignKey(TaxCode)
-#     ref_tax_code = models.ForeignKey(TaxCode)
-#     ref_base_sign = models.FloatField(default=1)
-#     ref_tax_code = models.FloatField(default=1)
-#     include_base_amount = models.BooleanField(default=False)
-#     price_include = models.BooleanField(default=False)
-#     type_tax_use = models.CharField(max_length=8, choices=TYPE_TAX_USES, default='all')
+    name = models.CharField('tax name', max_length=64, unique=True,
+            help_text='This name will be displayed on reports.')
+    sequence = models.IntegerField(default=1,
+            help_text='The sequence field is used to order the tax lines from the lowest sequences to the higher ones. The order is important if you have a tax with several tax children. In this case, the evalution order is important.')
+    amount = models.FloatField(default=0,
+            help_text='For taxes of percentage, enter % ratio between 0-1')
+    active = models.BooleanField(default=True,
+            help_text='If the active field is set to False, it will allow you to hide the tax without removing it.')
+    type = models.CharField('tax type', max_length=8, choices=TYPES, default='percent',
+            help_text='The computation method for the tax amount.')
+    account_collected = models.ForeignKey(Account, null=True, blank=True,
+            verbose_name='invoice tax account', related_name='tax_collected',
+            help_text='Set the account that will be set by default on invoice tax lines for invoices. Leave empty to use the expense account.')
+    account_paid = models.ForeignKey(Account, null=True, blank=True,
+            verbose_name='refund tax account', related_name='tax_paid',
+            help_text='Set the account that will be set by default on invoice tax lines for refund. Leave empty to use the expense account.')
+    parent = models.ForeignKey('self', verbose_name='parent tax account')
+    child_depend = models.BooleanField('tax on children',
+            help_text='Set if the tax computation is based on the computation of child taxes rather than on the total amount.')
+    # Fields used for the Tax declaration
+    base_code = models.ForeignKey(TaxCode, null=True, blank=True,
+            verbose_name='account base code', related_name='tax_base',
+            help_text='use this code for the tax declaration.')
+    tax_code = models.ForeignKey(TaxCode, null=True, blank=True,
+            verbose_name='account tax code', related_name='tax_tax',
+            help_text='use this code for the tax declaration.')
+    base_sign = models.FloatField(default=1, null=True, blank=True,
+            help_text='Usually 1 or -1.')
+    tax_sign = models.FloatField(default=1, null=True, blank=True,
+            help_text='Usually 1 or -1.')
+    # Same fields for refund invoices
+    ref_base_code = models.ForeignKey(TaxCode, null=True, blank=True,
+            verbose_name='refund base code', related_name='ref_tax_base',
+            help_text='use this code for the tax declaration.')
+    ref_tax_code = models.ForeignKey(TaxCode, null=True, blank=True,
+            verbose_name='refund tax code', related_name='ref_tax_tax',
+            help_text='use this code for the tax declaration.')
+    ref_base_sign = models.FloatField(default=1, null=True, blank=True,
+            help_text='Usually 1 or -1.')
+    ref_tax_code = models.FloatField(default=1, null=True, blank=True,
+            help_text='Usually 1 or -1.')
+    include_base_amount = models.BooleanField('included in base amount', default=False,
+            help_text='Indicates if the amout of tax must be included in the abase amount for the computation of the next taxes.')
+    price_include = models.BooleanField('tax included in price', default=False,
+            help_text='Check this if the price you use on the product and invoices includes this tax.')
+    type_tax_use = models.CharField(max_length=8, choices=TYPE_TAX_USES, default='all')
 
-#     class Meta:
-#         ordering = ['sequence']
+    class Meta:
+        ordering = ['sequence']
 
-#     def __unicode__(self):
-#         return self.name
+    def __unicode__(self):
+        return self.name
 
 
 # class Journal(models.Model):
