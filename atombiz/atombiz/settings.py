@@ -130,9 +130,6 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     # Apps
-    'common.currency',
-    'financial_management.cash_management',
-    'pricing.price_list',
 )
 
 # A sample logging configuration. The only tangible logging
