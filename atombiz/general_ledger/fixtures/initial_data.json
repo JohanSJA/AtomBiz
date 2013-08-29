@@ -1,0 +1,218 @@
+[
+  {
+    "model": "general_ledger.accountsection",
+    "pk": 1,
+    "fields": {
+      "number": 1,
+      "name": "Income"
+    }
+  },
+  {
+    "model": "general_ledger.accountsection",
+    "pk": 2,
+    "fields": {
+      "number": 2,
+      "name": "Cost Of Sales"
+    }
+  },
+  {
+    "model": "general_ledger.accountsection",
+    "pk": 3,
+    "fields": {
+      "number": 5,
+      "name": "Overheads"
+    }
+  },
+  {
+    "model": "general_ledger.accountsection",
+    "pk": 4,
+    "fields": {
+      "number": 10,
+      "name": "Fixed Assets"
+    }
+  },
+  {
+    "model": "general_ledger.accountsection",
+    "pk": 5,
+    "fields": {
+      "number": 15,
+      "name": "Inventory"
+    }
+  },
+  {
+    "model": "general_ledger.accountsection",
+    "pk": 6,
+    "fields": {
+      "number": 20,
+      "name": "Amounts Receivable"
+    }
+  },
+  {
+    "model": "general_ledger.accountsection",
+    "pk": 7,
+    "fields": {
+      "number": 25,
+      "name": "Cash"
+    }
+  },
+  {
+    "model": "general_ledger.accountsection",
+    "pk": 8,
+    "fields": {
+      "number": 30,
+      "name": "Amounts Payable"
+    }
+  },
+  {
+    "model": "general_ledger.accountsection",
+    "pk": 9,
+    "fields": {
+      "number": 50,
+      "name": "Financed By"
+    }
+  },
+  
+  {
+    "model": "general_ledger.accountgroup",
+    "pk": 1,
+    "fields": {
+      "name": "Sales",
+      "section": 1,
+      "pandl": true,
+      "sequence": 10
+    }
+  },
+  {
+    "model": "general_ledger.accountgroup",
+    "pk": 2,
+    "fields": {
+      "name": "Fixed Assets",
+      "section": 4,
+      "pandl": false,
+      "sequence": 500
+    }
+  },
+  {
+    "model": "general_ledger.accountgroup",
+    "pk": 3,
+    "fields": {
+      "name": "Current Assets",
+      "section": 6,
+      "pandl": false,
+      "sequence": 1000
+    }
+  },
+  {
+    "model": "general_ledger.accountgroup",
+    "pk": 4,
+    "fields": {
+      "name": "Liabilities",
+      "section": 8,
+      "pandl": false,
+      "sequence": 2000
+    }
+  },
+  {
+    "model": "general_ledger.accountgroup",
+    "pk": 5,
+    "fields": {
+      "name": "Financed",
+      "section": 9,
+      "pandl": false,
+      "sequence": 3000
+    }
+  },
+  {
+    "model": "general_ledger.accountgroup",
+    "pk": 6,
+    "fields": {
+      "name": "Revenue",
+      "section": 1,
+      "pandl": true,
+      "sequence": 4000
+    }
+  },
+  {
+    "model": "general_ledger.accountgroup",
+    "pk": 7,
+    "fields": {
+      "name": "Cost of Goods Sold",
+      "section": 2,
+      "pandl": true,
+      "sequence": 5000
+    }
+  },
+  {
+    "model": "general_ledger.accountgroup",
+    "pk": 8,
+    "fields": {
+      "name": "Outward Freight",
+      "parent": 7,
+      "section": 2,
+      "pandl": true,
+      "sequence": 5000
+    }
+  },
+  {
+    "model": "general_ledger.accountgroup",
+    "pk": 9,
+    "fields": {
+      "name": "Marketing Expenses",
+      "section": 3,
+      "pandl": true,
+      "sequence": 6000
+    }
+  },
+  {
+    "model": "general_ledger.accountgroup",
+    "pk": 10,
+    "fields": {
+      "name": "Promotions",
+      "parent": 9,
+      "section": 3,
+      "pandl": true,
+      "sequence": 6000
+    }
+  },
+  {
+    "model": "general_ledger.accountgroup",
+    "pk": 11,
+    "fields": {
+      "name": "Giveaways",
+      "parent": 10,
+      "section": 3,
+      "pandl": true,
+      "sequence": 6000
+    }
+  },
+  {
+    "model": "general_ledger.accountgroup",
+    "pk": 12,
+    "fields": {
+      "name": "Operating Expenses",
+      "section": 3,
+      "pandl": true,
+      "sequence": 7000
+    }
+  },
+  {
+    "model": "general_ledger.accountgroup",
+    "pk": 13,
+    "fields": {
+      "name": "Other Revenue and Expenses",
+      "section": 3,
+      "pandl": true,
+      "sequence": 8000
+    }
+  },
+  {
+    "model": "general_ledger.accountgroup",
+    "pk": 14,
+    "fields": {
+      "name": "Income Tax",
+      "section": 3,
+      "pandl": true,
+      "sequence": 9000
+    }
+  }
+]
