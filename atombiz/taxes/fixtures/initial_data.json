@@ -1,0 +1,39 @@
+[
+  {
+    "model": "taxes.group",
+    "pk": 1,
+    "fields": {
+      "name": "Taxable Supply"
+    }
+  },
+  {
+    "model": "taxes.group",
+    "pk": 2,
+    "fields": {
+      "name": "Luxury Items"
+    }
+  },
+  {
+    "model": "taxes.group",
+    "pk": 3,
+    "fields": {
+      "name": "Exempt"
+    }
+  },
+  {
+    "model": "taxes.group",
+    "pk": 4,
+    "fields": {
+      "name": "Freight"
+    }
+  },
+  
+  
+  {
+    "model": "taxes.province",
+    "pk": 1,
+    "fields": {
+      "name": "Default Tax Province"
+    }
+  }
+]

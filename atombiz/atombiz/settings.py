@@ -135,6 +135,7 @@ INSTALLED_APPS = (
     'sales',
     'customers',
     'payments',
+    'taxes',
 )
 
 # A sample logging configuration. The only tangible logging
