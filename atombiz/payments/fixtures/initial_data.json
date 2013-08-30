@@ -1,0 +1,42 @@
+[
+  {
+    "model": "payments.term",
+    "pk": 1,
+    "fields": {
+      "code": "20",
+      "name": "Due 20th of the Following Month",
+      "due_after_given": false,
+      "days": 22
+    }
+  },
+  {
+    "model": "payments.term",
+    "pk": 2,
+    "fields": {
+      "code": "30",
+      "name": "Due By End of the Following Month",
+      "due_after_given": false,
+      "days": 30
+    }
+  },
+  {
+    "model": "payments.term",
+    "pk": 3,
+    "fields": {
+      "code": "7",
+      "name": "Payment due within 7 days",
+      "due_after_given": true,
+      "days": 7
+    }
+  },
+  {
+    "model": "payments.term",
+    "pk": 4,
+    "fields": {
+      "code": "CA",
+      "name": "Cash Only",
+      "due_after_given": true,
+      "days": 2
+    }
+  }
+]
