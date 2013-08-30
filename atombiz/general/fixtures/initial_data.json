@@ -1,0 +1,101 @@
+[
+  {
+    "model": "general.currency",
+    "pk": 1,
+    "fields": {
+      "name": "Australian Dollars",
+      "code": "AUD",
+      "country": "Australia",
+      "hundreds_name": "cents",
+      "decimal_places": 2,
+      "rate": 0.9689
+    }
+  },
+  {
+    "model": "general.currency",
+    "pk": 2,
+    "fields": {
+      "name": "Swiss Francs",
+      "code": "CHF",
+      "country": "Swizerland",
+      "hundreds_name": "centimes",
+      "decimal_places": 2,
+      "rate": 0.9306
+    }
+  },
+  {
+    "model": "general.currency",
+    "pk": 3,
+    "fields": {
+      "name": "Euro",
+      "code": "EUR",
+      "country": "Euroland",
+      "hundreds_name": "cents",
+      "decimal_places": 2,
+      "rate": 0.7588
+    }
+  },
+  {
+    "model": "general.currency",
+    "pk": 4,
+    "fields": {
+      "name": "Pounds",
+      "code": "GBP",
+      "country": "England",
+      "hundreds_name": "Pence",
+      "decimal_places": 2,
+      "rate": 0.6561
+    }
+  },
+  {
+    "model": "general.currency",
+    "pk": 5,
+    "fields": {
+      "name": "Kenyian Shllings",
+      "code": "KES",
+      "country": "Kenya",
+      "hundreds_name": "",
+      "decimal_places": 0,
+      "rate": 87.6
+    }
+  },
+  {
+    "model": "general.currency",
+    "pk": 6,
+    "fields": {
+      "name": "US Dollars",
+      "code": "USD",
+      "country": "United States",
+      "hundreds_name": "Cents",
+      "decimal_places": 2,
+      "rate": 1
+    }
+  },
+  
+  
+  {
+    "model": "general.company",
+    "pk": 1,
+    "fields": {
+      "name": "AtomBiz Demo",
+      "gst_no": "",
+      "address": "123 Web Way\nPO Box 123\nQueen Street\nMelbourne\nVictoria 3043\nAustralia",
+      "telephone": "+61 3 4567 8901",
+      "fax": "+61 3 4567 8902",
+      "email": "atombiz@atombizdemo.com",
+      "currency": 6,
+      "debtor_account": 11,
+      "creditor_account": 43,
+      "payroll_account": 55,
+      "good_received_account": 44,
+      "retained_earning_account": 76,
+      "freight_account": 88,
+      "sales_exchange_account": 78,
+      "purchase_exchange_account": 86,
+      "payment_discount_account": 83,
+      "gl_link_debtors": true,
+      "gl_link_creditors": true,
+      "gl_link_stock": true
+    }
+  }
+]

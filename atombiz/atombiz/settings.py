@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     # Apps
     'general_ledger',
+    'general',
 )
 
 # A sample logging configuration. The only tangible logging

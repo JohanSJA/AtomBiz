@@ -35,4 +35,4 @@ class ChartMaster(models.Model):
         ordering = ['code', 'group']
     
     def __unicode__(self):
-        return self.name
+        return '{} ({})'.format(self.name, self.code)
