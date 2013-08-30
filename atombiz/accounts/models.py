@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class AccountSection(models.Model):
+class Section(models.Model):
     number = models.SmallIntegerField(unique=True)
     name = models.CharField(max_length=64)
     
@@ -12,10 +12,10 @@ class AccountSection(models.Model):
         return '{} ({})'.format(self.name, self.number)
 
 
-class AccountGroup(models.Model):
+class Group(models.Model):
     name = models.CharField(max_length=64, unique=True)
     parent = models.ForeignKey('self', null=True, blank=True)
-    section = models.ForeignKey(AccountSection, verbose_name='section in accounts')
+    section = models.ForeignKey(Section, verbose_name='section in accounts')
     pandl = models.BooleanField('profit and loss')
     sequence = models.SmallIntegerField('sequence in TB')
     
@@ -26,10 +26,10 @@ class AccountGroup(models.Model):
         return self.name
 
 
-class ChartMaster(models.Model):
+class Master(models.Model):
     code = models.SmallIntegerField(unique=True)
     name = models.CharField(max_length=64)
-    group = models.ForeignKey(AccountGroup)
+    group = models.ForeignKey(Group)
     
     class Meta:
         ordering = ['code', 'group']
