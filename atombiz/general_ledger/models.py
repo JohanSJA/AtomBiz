@@ -20,7 +20,19 @@ class AccountGroup(models.Model):
     sequence = models.SmallIntegerField('sequence in TB')
     
     class Meta:
-        ordering = ['section']
+        ordering = ['sequence']
+    
+    def __unicode__(self):
+        return self.name
+
+
+class ChartMaster(models.Model):
+    code = models.SmallIntegerField(unique=True)
+    name = models.CharField(max_length=64)
+    group = models.ForeignKey(AccountGroup)
+    
+    class Meta:
+        ordering = ['code', 'group']
     
     def __unicode__(self):
         return self.name

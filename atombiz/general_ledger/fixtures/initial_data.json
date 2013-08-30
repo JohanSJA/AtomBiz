@@ -71,6 +71,7 @@
       "name": "Financed By"
     }
   },
+
   
   {
     "model": "general_ledger.accountgroup",
@@ -213,6 +214,1331 @@
       "section": 3,
       "pandl": true,
       "sequence": 9000
+    }
+  },
+
+
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 1,
+    "fields": {
+      "code": 1,
+      "name": "Default Sales/Discounts",
+      "group": 1
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 2,
+    "fields": {
+      "code": 1010,
+      "name": "Petty Cash",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 3,
+    "fields": {
+      "code": 1020,
+      "name": "Cash on Hand",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 4,
+    "fields": {
+      "code": 1030,
+      "name": "Cheque Accounts",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 5,
+    "fields": {
+      "code": 1040,
+      "name": "Saving Accounts",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 6,
+    "fields": {
+      "code": 1050,
+      "name": "Payroll Accounts",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 7,
+    "fields": {
+      "code": 1060,
+      "name": "Special Accounts",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 8,
+    "fields": {
+      "code": 1070,
+      "name": "Money Market Investments",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 9,
+    "fields": {
+      "code": 1080,
+      "name": "Short-Term Investments",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 10,
+    "fields": {
+      "code": 1090,
+      "name": "Interest Receivable",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 11,
+    "fields": {
+      "code": 1100,
+      "name": "Accounts Receivable",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 12,
+    "fields": {
+      "code": 1150,
+      "name": "Allowance for Doubtful Accounts",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 13,
+    "fields": {
+      "code": 1200,
+      "name": "Notes Receivable",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 14,
+    "fields": {
+      "code": 1250,
+      "name": "Income Tax Receivable",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 15,
+    "fields": {
+      "code": 1300,
+      "name": "Prepaid Expenses",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 16,
+    "fields": {
+      "code": 1350,
+      "name": "Advances",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 17,
+    "fields": {
+      "code": 1400,
+      "name": "Supplies Inventory",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 18,
+    "fields": {
+      "code": 1420,
+      "name": "Supplis Inventory",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 19,
+    "fields": {
+      "code": 1440,
+      "name": "Work in Progress Inventory",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 20,
+    "fields": {
+      "code": 1460,
+      "name": "Finished Goods Inventory",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 21,
+    "fields": {
+      "code": 1500,
+      "name": "Land",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 22,
+    "fields": {
+      "code": 1550,
+      "name": "Bonds",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 23,
+    "fields": {
+      "code": 1600,
+      "name": "Buildings",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 24,
+    "fields": {
+      "code": 1620,
+      "name": "Accumulated Depreciation of Buildings",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 25,
+    "fields": {
+      "code": 1650,
+      "name": "Equipment",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 26,
+    "fields": {
+      "code": 1670,
+      "name": "Accumulated Depreciation of Equipment",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 27,
+    "fields": {
+      "code": 1700,
+      "name": "Furniture & Fixtures",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 28,
+    "fields": {
+      "code": 1710,
+      "name": "Accumulated Depreciation of Furniture & Fixtures",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 29,
+    "fields": {
+      "code": 1720,
+      "name": "Office Equipment",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 30,
+    "fields": {
+      "code": 1730,
+      "name": "Accumulated Depreciation of Office Equipment",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 31,
+    "fields": {
+      "code": 1740,
+      "name": "Software",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 32,
+    "fields": {
+      "code": 1750,
+      "name": "Accumulated Depreciation of Software",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 33,
+    "fields": {
+      "code": 1760,
+      "name": "Vehicles",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 34,
+    "fields": {
+      "code": 1770,
+      "name": "Accumulated Depreciation of Vehicles",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 35,
+    "fields": {
+      "code": 1780,
+      "name": "Other Depreciable Property",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 36,
+    "fields": {
+      "code": 1790,
+      "name": "Accumulated Depreciation of Other Depreciable Prop",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 37,
+    "fields": {
+      "code": 1800,
+      "name": "Patents",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 38,
+    "fields": {
+      "code": 1850,
+      "name": "Goodwill",
+      "group": 2
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 39,
+    "fields": {
+      "code": 1900,
+      "name": "Future Income Tax Receivable",
+      "group": 3
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 40,
+    "fields": {
+      "code": 2010,
+      "name": "Bank Indedebtedness (overdraft)",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 41,
+    "fields": {
+      "code": 2020,
+      "name": "Retainers or Advances on Work",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 42,
+    "fields": {
+      "code": 2050,
+      "name": "Interest Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 43,
+    "fields": {
+      "code": 2100,
+      "name": "Accounts Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 44,
+    "fields": {
+      "code": 2150,
+      "name": "Goods Received Suspense",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 45,
+    "fields": {
+      "code": 2200,
+      "name": "Short-Term Loan Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 46,
+    "fields": {
+      "code": 2230,
+      "name": "Current Portion of Long-Term Debt Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 47,
+    "fields": {
+      "code": 2250,
+      "name": "Income Tax Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 48,
+    "fields": {
+      "code": 2300,
+      "name": "GST Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 49,
+    "fields": {
+      "code": 2310,
+      "name": "GST Recoverable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 50,
+    "fields": {
+      "code": 2320,
+      "name": "PST Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 51,
+    "fields": {
+      "code": 2330,
+      "name": "PST Recoverable (commission)",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 52,
+    "fields": {
+      "code": 2340,
+      "name": "Payroll Tax Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 53,
+    "fields": {
+      "code": 2350,
+      "name": "Withholding Income Tax Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 54,
+    "fields": {
+      "code": 2360,
+      "name": "Other Taxes Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 55,
+    "fields": {
+      "code": 2400,
+      "name": "Employee Salaries Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 56,
+    "fields": {
+      "code": 2410,
+      "name": "Management Salaries Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 57,
+    "fields": {
+      "code": 2420,
+      "name": "Director / Partner Fees Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 58,
+    "fields": {
+      "code": 2450,
+      "name": "Health Benefits Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 59,
+    "fields": {
+      "code": 2460,
+      "name": "Pension Benefits Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 60,
+    "fields": {
+      "code": 2470,
+      "name": "Canada Pension Plan Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 61,
+    "fields": {
+      "code": 2480,
+      "name": "Employment Insurance Premiums Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 62,
+    "fields": {
+      "code": 2500,
+      "name": "Land Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 63,
+    "fields": {
+      "code": 2550,
+      "name": "Long-Term Bank Loan",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 64,
+    "fields": {
+      "code": 2560,
+      "name": "Notes Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 65,
+    "fields": {
+      "code": 2600,
+      "name": "Building & Equipment Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 66,
+    "fields": {
+      "code": 2700,
+      "name": "Furnishing & Fixture Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 67,
+    "fields": {
+      "code": 2720,
+      "name": "Office Equipment Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 68,
+    "fields": {
+      "code": 2740,
+      "name": "Vehicle Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 69,
+    "fields": {
+      "code": 2760,
+      "name": "Other Property Payable",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 70,
+    "fields": {
+      "code": 2800,
+      "name": "Shareholder Loans",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 71,
+    "fields": {
+      "code": 2900,
+      "name": "Suspense",
+      "group": 4
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 72,
+    "fields": {
+      "code": 3100,
+      "name": "Capital Stock",
+      "group": 5
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 73,
+    "fields": {
+      "code": 3200,
+      "name": "Capital Surplus / Dividends",
+      "group": 5
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 74,
+    "fields": {
+      "code": 3300,
+      "name": "Dividend Taxes Payable",
+      "group": 5
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 75,
+    "fields": {
+      "code": 3400,
+      "name": "Dividend Taxes Refundable",
+      "group": 5
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 76,
+    "fields": {
+      "code": 3500,
+      "name": "Retained Earnings",
+      "group": 5
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 77,
+    "fields": {
+      "code": 4100,
+      "name": "Product / Service Sales",
+      "group": 6
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 78,
+    "fields": {
+      "code": 4200,
+      "name": "Sales Exchange Gains/Losses",
+      "group": 6
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 79,
+    "fields": {
+      "code": 4500,
+      "name": "Consulting Services",
+      "group": 6
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 80,
+    "fields": {
+      "code": 4600,
+      "name": "Rentals",
+      "group": 6
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 81,
+    "fields": {
+      "code": 4700,
+      "name": "Finance Charge Income",
+      "group": 6
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 82,
+    "fields": {
+      "code": 4800,
+      "name": "Sales Returns & Allowances",
+      "group": 6
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 83,
+    "fields": {
+      "code": 4900,
+      "name": "Sales Discounts",
+      "group": 6
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 84,
+    "fields": {
+      "code": 5000,
+      "name": "Cost of Sales",
+      "group": 7
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 85,
+    "fields": {
+      "code": 5100,
+      "name": "Production Expenses",
+      "group": 7
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 86,
+    "fields": {
+      "code": 5200,
+      "name": "Purchases Exchange Gains/Losses",
+      "group": 7
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 87,
+    "fields": {
+      "code": 5500,
+      "name": "Direct Labour Costs",
+      "group": 7
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 88,
+    "fields": {
+      "code": 5600,
+      "name": "Freight Charges",
+      "group": 8
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 89,
+    "fields": {
+      "code": 5700,
+      "name": "Inventory Adjustment",
+      "group": 7
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 90,
+    "fields": {
+      "code": 5800,
+      "name": "Purchase Returns & Allowances",
+      "group": 7
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 91,
+    "fields": {
+      "code": 5900,
+      "name": "Purchase Discounts",
+      "group": 7
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 92,
+    "fields": {
+      "code": 6100,
+      "name": "Advertising",
+      "group": 9
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 93,
+    "fields": {
+      "code": 6150,
+      "name": "Promotion",
+      "group": 10
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 94,
+    "fields": {
+      "code": 6200,
+      "name": "Communications",
+      "group": 9
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 95,
+    "fields": {
+      "code": 6250,
+      "name": "Meeting Expenses",
+      "group": 9
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 96,
+    "fields": {
+      "code": 6300,
+      "name": "Travelling Expenses",
+      "group": 9
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 97,
+    "fields": {
+      "code": 6400,
+      "name": "Delivery Expenses",
+      "group": 9
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 98,
+    "fields": {
+      "code": 6500,
+      "name": "Sales Salaries & Commission",
+      "group": 9
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 99,
+    "fields": {
+      "code": 6550,
+      "name": "Sales Salaries & Commission Deductions",
+      "group": 9
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 100,
+    "fields": {
+      "code": 6590,
+      "name": "Benefits",
+      "group": 9
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 101,
+    "fields": {
+      "code": 6600,
+      "name": "Other Selling Expenses",
+      "group": 9
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 102,
+    "fields": {
+      "code": 6700,
+      "name": "Permits, Licenses & License Fees",
+      "group": 9
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 103,
+    "fields": {
+      "code": 6800,
+      "name": "Research & Development",
+      "group": 9
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 104,
+    "fields": {
+      "code": 6900,
+      "name": "Professional Services",
+      "group": 9
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 105,
+    "fields": {
+      "code": 7020,
+      "name": "Support Salaries & Wages",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 106,
+    "fields": {
+      "code": 7030,
+      "name": "Support Salary & Wage Deductions",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 107,
+    "fields": {
+      "code": 7040,
+      "name": "Management Salaries",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 108,
+    "fields": {
+      "code": 7050,
+      "name": "Management Salary Deductions",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 109,
+    "fields": {
+      "code": 7060,
+      "name": "Director / Partner Fees",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 110,
+    "fields": {
+      "code": 7070,
+      "name": "Director / Partner Deductions",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 111,
+    "fields": {
+      "code": 7080,
+      "name": "Payroll Tax",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 112,
+    "fields": {
+      "code": 7090,
+      "name": "Benefits",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 113,
+    "fields": {
+      "code": 7100,
+      "name": "Training & Education Expenses",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 114,
+    "fields": {
+      "code": 7150,
+      "name": "Dues & Subscriptions",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 115,
+    "fields": {
+      "code": 7200,
+      "name": "Accounting Fees",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 116,
+    "fields": {
+      "code": 7210,
+      "name": "Audit Fees",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 117,
+    "fields": {
+      "code": 7220,
+      "name": "Banking Fees",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 118,
+    "fields": {
+      "code": 7230,
+      "name": "Credit Card Fees",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 119,
+    "fields": {
+      "code": 7240,
+      "name": "Consulting Fees",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 120,
+    "fields": {
+      "code": 7260,
+      "name": "Legal Fees",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 121,
+    "fields": {
+      "code": 7280,
+      "name": "Other Professional Fees",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 122,
+    "fields": {
+      "code": 7300,
+      "name": "Business Tax",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 123,
+    "fields": {
+      "code": 7350,
+      "name": "Property Tax",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 124,
+    "fields": {
+      "code": 7390,
+      "name": "Corporation Capital Tax",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 125,
+    "fields": {
+      "code": 7400,
+      "name": "Office Rent",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 126,
+    "fields": {
+      "code": 7450,
+      "name": "Equipment Rental",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 127,
+    "fields": {
+      "code": 7500,
+      "name": "Office Supplies",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 128,
+    "fields": {
+      "code": 7550,
+      "name": "Office Repair & Maintenance",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 129,
+    "fields": {
+      "code": 7600,
+      "name": "Automotive Expenses",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 130,
+    "fields": {
+      "code": 7610,
+      "name": "Communication Expenses",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 131,
+    "fields": {
+      "code": 7620,
+      "name": "Insurance Expenses",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 132,
+    "fields": {
+      "code": 7630,
+      "name": "Postage & Courier Expenses",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 133,
+    "fields": {
+      "code": 7640,
+      "name": "Miscellaneous Expenses",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 134,
+    "fields": {
+      "code": 7650,
+      "name": "Travel Expenses",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 135,
+    "fields": {
+      "code": 7660,
+      "name": "Utilities",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 136,
+    "fields": {
+      "code": 7700,
+      "name": "Ammortization Expenses",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 137,
+    "fields": {
+      "code": 7750,
+      "name": "Depreciation Expenses",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 138,
+    "fields": {
+      "code": 7800,
+      "name": "Interest Expense",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 139,
+    "fields": {
+      "code": 7900,
+      "name": "Bad Debt Expense",
+      "group": 12
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 140,
+    "fields": {
+      "code": 8100,
+      "name": "Gain on Sale of Assets",
+      "group": 13
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 141,
+    "fields": {
+      "code": 8200,
+      "name": "Interest Income",
+      "group": 13
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 142,
+    "fields": {
+      "code": 8300,
+      "name": "Recovery on Bad Debt",
+      "group": 13
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 143,
+    "fields": {
+      "code": 8400,
+      "name": "Other Revenue",
+      "group": 13
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 144,
+    "fields": {
+      "code": 8500,
+      "name": "Loss on Sale of Assets",
+      "group": 13
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 145,
+    "fields": {
+      "code": 8600,
+      "name": "Charitable Contributions",
+      "group": 13
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 146,
+    "fields": {
+      "code": 8900,
+      "name": "Other Expenses",
+      "group": 13
+    }
+  },
+  {
+    "model": "general_ledger.chartmaster",
+    "pk": 147,
+    "fields": {
+      "code": 9100,
+      "name": "Income Tax Provision",
+      "group": 14
     }
   }
 ]
