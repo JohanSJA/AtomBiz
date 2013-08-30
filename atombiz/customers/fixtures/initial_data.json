@@ -1,0 +1,29 @@
+[
+  {
+    "model": "customers.creditstatus",
+    "pk": 1,
+    "fields": {
+      "code": 1,
+      "name": "Good History",
+      "disallow_invoices": false
+    }
+  },
+  {
+    "model": "customers.creditstatus",
+    "pk": 2,
+    "fields": {
+      "code": 20,
+      "name": "Watch",
+      "disallow_invoices": false
+    }
+  },
+  {
+    "model": "customers.creditstatus",
+    "pk": 3,
+    "fields": {
+      "code": 51,
+      "name": "In liquidation",
+      "disallow_invoices": true
+    }
+  }
+]
