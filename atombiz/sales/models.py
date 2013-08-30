@@ -26,5 +26,8 @@ class Man(models.Model):
     commission_rate_2 = models.FloatField()
     current = models.BooleanField(default=True)
     
+    class Meta:
+        verbose_name_plural = 'men'
+    
     def __unicode__(self):
         return self.name

@@ -8,3 +8,6 @@ class CreditStatusAdmin(admin.ModelAdmin):
 
 
 admin.site.register(CreditStatus, CreditStatusAdmin)
+admin.site.register(Type)
+admin.site.register(Customer)
+admin.site.register(Branch)

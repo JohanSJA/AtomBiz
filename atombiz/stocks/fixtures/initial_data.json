@@ -1,0 +1,41 @@
+[
+  {
+    "model": "stocks.location",
+    "pk": 1,
+    "fields": {
+      "code": "AN",
+      "name": "Anaheim",
+      "contact": "Brett",
+      "address": "Los Angeles\nUSA",
+      "tax": 1,
+      "internal_request": false 
+    }
+  },
+  {
+    "model": "stocks.location",
+    "pk": 2,
+    "fields": {
+      "code": "MEL",
+      "name": "Melbourne",
+      "contact": "Jack Roberts",
+      "address": "1234 Collins Street\nMelbourne\nVictoria 2345\nAustralia",
+      "tel": "+61 3 56789012",
+      "fax": "+61 3 56789013",
+      "email": "jacko@atombizdemo.com",
+      "tax": 1,
+      "internal_request": true
+    }
+  },
+  {
+    "model": "stocks.location",
+    "pk": 3,
+    "fields": {
+      "code": "TOR",
+      "name": "Toronto",
+      "contact": "Clive Contrary",
+      "address": "Level 100\nCN Tower\nToronto",
+      "tax": 1,
+      "internal_request": true
+    }
+  }
+]
