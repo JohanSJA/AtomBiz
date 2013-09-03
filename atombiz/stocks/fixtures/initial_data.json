@@ -37,5 +37,56 @@
       "tax": 1,
       "internal_request": true
     }
+  },
+  
+  
+  {
+    "model": "stocks.unitofmeasure",
+    "pk": 1,
+    "fields": {
+      "name": "each"
+    }
+  },
+  {
+    "model": "stocks.unitofmeasure",
+    "pk": 2,
+    "fields": {
+      "name": "meters"
+    }
+  },
+  {
+    "model": "stocks.unitofmeasure",
+    "pk": 3,
+    "fields": {
+      "name": "kgs"
+    }
+  },
+  {
+    "model": "stocks.unitofmeasure",
+    "pk": 4,
+    "fields": {
+      "name": "litres"
+    }
+  },
+  {
+    "model": "stocks.unitofmeasure",
+    "pk": 5,
+    "fields": {
+      "name": "length"
+    }
+  },
+  {
+    "model": "stocks.unitofmeasure",
+    "pk": 6,
+    "fields": {
+      "name": "hours"
+    }
+  },
+  {
+    "model": "stocks.unitofmeasure",
+    "pk": 7,
+    "fields": {
+      "name": "feet"
+    }
   }
 ]

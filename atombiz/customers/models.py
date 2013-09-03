@@ -77,6 +77,7 @@ class Branch(models.Model):
     internal_code = models.CharField(max_length=32)
     
     class Meta:
+        verbose_name_plural = 'branches'
         unique_together = ('code', 'customer')
     
     def __unicode__(self):
