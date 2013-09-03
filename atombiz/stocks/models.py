@@ -95,3 +95,17 @@ class Master(models.Model):
     
     def __unicode__(self):
         return self.name
+
+
+class Status(models.Model):
+    location = models.ForeignKey(Location)
+    stock = models.ForeignKey(Master)
+    quantity = models.FloatField()
+    reorder_level = models.IntegerField()
+    
+    class Meta:
+        unique_together = ('location', 'stock')
+        verbose_name_plural = 'statuses'
+    
+    def __unicode__(self):
+        return '{} at {}'.format(self.stock, self.location)
