@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^$', RedirectView.as_view(url='/users/login/')),
     
     url(r'^users/', include('users.urls')),
+    url(r'^stocks/', include('stocks.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

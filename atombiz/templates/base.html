@@ -16,7 +16,17 @@
 {% block project_navbar_collapse %}
   {% if user.is_authenticated %}
     <ul class="nav navbar-nav">
-      <li><a href="/users/logout/">Logout</a></li>
+      {% with stocks_url="/stocks/" %}
+        <li{% if request.path == stocks_url %} class="active"{% endif %}><a href="{{ stocks_url }}">Stocks</a></li>
+      {% endwith %}
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user }} <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="/users/logout/">Logout</a></li>
+        </ul>
+      </li>
     </ul>
   {% endif %}
 {% endblock %}

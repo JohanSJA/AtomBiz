@@ -5,6 +5,8 @@ import os
 SETTINGS_ROOT = os.path.dirname(__file__)
 PROJECT_ROOT = os.path.dirname(SETTINGS_ROOT)
 
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -117,6 +119,10 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(PROJECT_ROOT, 'templates'),
+)
+
+TEMPLATE_CONTEXT_PROCESSORS += (
+    'django.core.context_processors.request',
 )
 
 INSTALLED_APPS = (
