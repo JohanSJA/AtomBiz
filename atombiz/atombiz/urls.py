@@ -10,8 +10,9 @@ urlpatterns = patterns('',
     # url(r'^$', 'atombiz.views.home', name='home'),
     # url(r'^atombiz/', include('atombiz.foo.urls')),
     url(r'^$', RedirectView.as_view(url='/users/login/')),
-    
+
     url(r'^users/', include('users.urls')),
+    url(r'^accounts/', include('accounts.urls')),
     url(r'^stocks/', include('stocks.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
