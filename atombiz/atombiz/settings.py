@@ -142,6 +142,7 @@ INSTALLED_APPS = (
     'taxes',
     'stocks',
     'customers',
+    'users',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -172,3 +173,7 @@ LOGGING = {
         },
     }
 }
+
+# Users authentication settings
+LOGIN_URL = "/users/login/"
+LOGIN_REDIRECT_URL = "/users/dashboard/"
