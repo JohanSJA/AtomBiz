@@ -1,0 +1,39 @@
+{% extends "accounts/base.html" %}
+
+{% block rows %}
+	<ol class="breadcrumb">
+		<li><a href="/accounts/">Accounts</a></li>
+		<li class="active">Sections</li>
+	</ol>
+	
+	<div class="page-header">
+		<h1>Groups</h1>
+	</div>
+	
+	<div class=" table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Section</th>
+					<th>Profit & Loss</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for group in group_list %}
+					<tr>
+						<td>{{ group.name }}</td>
+						<td>{{ group.section }}</td>
+						<td>
+							{% if group.pandl %}
+								<span class="glyphicon glyphicon-ok"></span>
+							{% else %}
+								<span class="glyphicon glyphicon-remove"></span>
+							{% endif %}
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

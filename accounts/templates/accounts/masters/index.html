@@ -1,0 +1,33 @@
+{% extends "accounts/base.html" %}
+
+{% block rows %}
+	<ol class="breadcrumb">
+		<li><a href="/accounts/">Accounts</a></li>
+		<li class="active">Groups</li>
+	</ol>
+	
+	<div class="page-header">
+		<h1>Masters</h1>
+	</div>
+	
+	<div class=" table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Code</th>
+					<th>Name</th>
+					<th>Group</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for master in master_list %}
+					<tr>
+						<td>{{ master.code }}</td>
+						<td>{{ master.name }}</td>
+						<td>{{ master.group }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

@@ -5,7 +5,7 @@
 {% block project_style %}
   <style>
    body {
-     padding-top: 50px;
+     padding-top: 70px;
    }
   </style>
 {% endblock %}
@@ -25,10 +25,10 @@
   {% if user.is_authenticated %}
     <ul class="nav navbar-nav">
       {% with url="/stocks/" %}
-        <li{% if request.path == url %} class="active"{% endif %}><a href="{{ url }}">Stocks</a></li>
+        <li{% if url in request.path %} class="active"{% endif %}><a href="{{ url }}">Stocks</a></li>
       {% endwith %}
       {% with url="/accounts/" %}
-        <li{% if request.path == url %} class="active"{% endif %}><a href="{{ url }}">Accounts</a></li>
+        <li{% if url in request.path %} class="active"{% endif %}><a href="{{ url }}">Accounts</a></li>
       {% endwith %}
     </ul>
     <ul class="nav navbar-nav navbar-right">
