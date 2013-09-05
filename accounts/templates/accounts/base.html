@@ -1,39 +1,43 @@
 {% extends "base.html" %}
 
 {% block app_rows %}
-	<div class="row">
-		<div class="col-lg-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h2 class="panel-title">Accounts</h2>
-				</div>
-				<div class="panel-body">
-					<p>All account related stuffs.</p>
-				</div>
-	
-				<div class="list-group">
-					{% with "/accounts/sections/" as url %}
-						<a href="{{ url }}" class="list-group-item{% if url in request.path %} active{% endif %}">Sections</a>
-					{% endwith %}
-					{% with "/accounts/groups/" as url %}
-						<a href="{{ url }}" class="list-group-item{% if url in request.path %} active{% endif %}">Groups</a>
-					{% endwith %}
-					{% with "/accounts/masters/" as url %}
-						<a href="{{ url }}" class="list-group-item{% if url in request.path %} active{% endif %}">Masters</a>
-					{% endwith %}
-				</div>
-			</div>
-		</div>
-	
-		<div class="col-lg-10">
-			{% block rows %}
-				<ol class="breadcrumb">
-					<li class="active">Accounts</li>
-				</ol>
-				<p>
-					Main content
-				</p>
-			{% endblock %}
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-lg-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Accounts</h2>
+                </div>
+                <div class="panel-body">
+                    <p>
+                        All account related stuffs.
+                    </p>
+                </div>
+
+                <div class="list-group">
+                    {% with "/accounts/sections/" as url %}
+                    <a href="{{ url }}" class="list-group-item{% if url in request.path %} active{% endif %}">Sections</a>
+                    {% endwith %}
+                    {% with "/accounts/groups/" as url %}
+                    <a href="{{ url }}" class="list-group-item{% if url in request.path %} active{% endif %}">Groups</a>
+                    {% endwith %}
+                    {% with "/accounts/masters/" as url %}
+                    <a href="{{ url }}" class="list-group-item{% if url in request.path %} active{% endif %}">Masters</a>
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-10">
+            {% block rows %}
+            <ol class="breadcrumb">
+                <li class="active">
+                    Accounts
+                </li>
+            </ol>
+            <p>
+                Main content
+            </p>
+            {% endblock %}
+        </div>
+    </div>
 {% endblock %}
