@@ -14,17 +14,17 @@ class Location(models.Model):
     email = models.EmailField(blank=True)
     tax = models.ForeignKey(Province)
     internal_request = models.BooleanField(default=True, help_text='Allow or not internal request from this location.')
-    
+
     class Meta:
         ordering = ['code']
-    
+
     def __unicode__(self):
         return self.name
 
 
 class Shipper(models.Model):
     name = models.CharField(max_length=64)
-    
+
     def __unicode__(self):
         return self.name
 
@@ -36,7 +36,7 @@ class Category(models.Model):
         ('D', 'Dummy Item - (No movements)'),
         ('L', 'Labour')
     )
-    
+
     code = models.CharField(max_length=8, unique=True)
     name = models.CharField(max_length=32)
     type = models.CharField(max_length=1, choices=TYPES)
@@ -46,20 +46,20 @@ class Category(models.Model):
     issues_gl = models.ForeignKey(Master, related_name='stock_cat_issues', verbose_name='internal stock issues GL')
     price_gl = models.ForeignKey(Master, related_name='stock_cat_price', verbose_name='price variance GL')
     usage_gl = models.ForeignKey(Master, related_name='stock_cat_usage', verbose_name='usage variance GL')
-    
+
     class Meta:
         verbose_name_plural = 'categories'
-    
+
     def __unicode__(self):
         return self.name
 
 
 class UnitOfMeasure(models.Model):
     name = models.CharField(max_length=16)
-    
+
     class Meta:
         verbose_name_plural = 'units of measure'
-    
+
     def __unicode__(self):
         return self.name
 
@@ -73,7 +73,7 @@ class Master(models.Model):
         ('B', 'Purchased'),
         ('D', 'Service/Labour')
     )
-    
+
     code = models.CharField(max_length=32, unique=True)
     name = models.CharField(max_length=64)
     description = models.TextField()
@@ -92,7 +92,7 @@ class Master(models.Model):
     tax_category = models.ForeignKey(Group)
     pan_size = models.FloatField()
     shrinkage_factor = models.FloatField()
-    
+
     def __unicode__(self):
         return self.name
 
@@ -102,10 +102,10 @@ class Status(models.Model):
     stock = models.ForeignKey(Master)
     quantity = models.FloatField()
     reorder_level = models.IntegerField()
-    
+
     class Meta:
         unique_together = ('location', 'stock')
         verbose_name_plural = 'statuses'
-    
+
     def __unicode__(self):
         return '{} at {}'.format(self.stock, self.location)

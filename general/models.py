@@ -10,10 +10,10 @@ class Currency(models.Model):
     hundreds_name = models.CharField('hundredths name', max_length=16, default='Cents')
     decimal_places = models.SmallIntegerField('Decimal places to display')
     rate = models.DecimalField(max_digits=16, decimal_places=4)
-    
+
     class Meta:
         verbose_name_plural = 'currencies'
-    
+
     def __unicode__(self):
         return self.name
 
@@ -39,10 +39,10 @@ class Company(models.Model):
     gl_link_debtors = models.BooleanField(default=True)
     gl_link_creditors = models.BooleanField(default=True)
     gl_link_stock = models.BooleanField(default=True)
-    
+
     class Meta:
         verbose_name_plural = 'companies'
-    
+
     def __unicode__(self):
         return self.name
-    
+

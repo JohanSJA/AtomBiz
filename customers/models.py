@@ -11,18 +11,18 @@ class CreditStatus(models.Model):
     code = models.SmallIntegerField(unique=True)
     name = models.CharField(max_length=32)
     disallow_invoices = models.BooleanField()
-    
+
     class Meta:
         verbose_name_plural = 'credit statuses'
         ordering = ['code']
-    
+
     def __unicode__(self):
         return self.name
 
 
 class Type(models.Model):
     name = models.CharField(max_length=128)
-    
+
     def __unicode__(self):
         return self.name
 
@@ -44,10 +44,10 @@ class Customer(models.Model):
     currency = models.ForeignKey(Currency)
     po_in_so = models.BooleanField('PO line in SO')
     invoice_to_ho = models.BooleanField('invoicing to HO')
-    
+
     def __unicode__(self):
         return self.name
-        
+
     def invoicing_address(self):
         if self.invoice_to_ho:
             return 'Invoicing to HO'
@@ -70,15 +70,15 @@ class Branch(models.Model):
     fax = models.CharField(max_length=32)
     email = models.EmailField()
     tax_group = models.ForeignKey(Group)
-    transaction_on = models.BooleanField('transaction on branch') 
+    transaction_on = models.BooleanField('transaction on branch')
     shipper = models.ForeignKey(Shipper)
     packlist_details = models.BooleanField('show company details and logo', default=True)
     postal_address = models.TextField()
     internal_code = models.CharField(max_length=32)
-    
+
     class Meta:
         verbose_name_plural = 'branches'
         unique_together = ('code', 'customer')
-    
+
     def __unicode__(self):
         return self.name
