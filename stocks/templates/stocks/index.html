@@ -1,1 +1,18 @@
 {% extends "stocks/base.html" %}
+
+{% block rows %}
+    <ol class="breadcrumb">
+        <li class="active">
+            Stocks
+        </li>
+    </ol>
+
+    <div class="page-header">
+        <h1>Stocks</h1>
+    </div>
+
+    <p>This is where you will find all the stocks related operations.</p>
+
+    <h2><a href="/stocks/masters/">Masters</a></h2>
+    <p>This is basically a listing of all the stocks available in the company.</p>
+{% endblock %}

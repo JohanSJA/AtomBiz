@@ -1,11 +1,28 @@
 {% extends "base.html" %}
 
 {% block app_rows %}
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="page-header">
-        <h1>Stocks</h1>
-      </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Stocks</h2>
+                </div>
+                <div class="panel-body">
+                    <p>
+                        All stock related stuffs.
+                    </p>
+                </div>
+
+                <div class="list-group">
+                    {% with "/stocks/masters/" as url %}
+                    <a href="{{ url }}" class="list-group-item{% if url in request.path %} active{% endif %}">Masters</a>
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-10">
+            {% block rows %}{% endblock %}
+        </div>
     </div>
-  </div>
 {% endblock %}
