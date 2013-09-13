@@ -6,5 +6,9 @@ from . import views
 
 urlpatterns = patterns('',
     url(r'^$', login_required(TemplateView.as_view(template_name='stocks/index.html'))),
-    url(r'^masters/$', login_required(views.MasterList.as_view()))
+)
+
+urlpatterns += patterns('views',
+    url(r'^masters/$', login_required(views.MasterList.as_view()), name='stocks_master_list'),
+    url(r'^masters/new', login_required(views.MasterCreate.as_view()), name='stocks_master_new')
 )

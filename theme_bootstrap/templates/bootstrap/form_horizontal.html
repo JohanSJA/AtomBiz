@@ -1,0 +1,17 @@
+{% load widget_tweaks %}
+
+{% for field in form %}
+    <div class="form-group{% if form.errors %} hasError{% endif %}">
+        {% if field|widget_type == "checkboxinput" %}
+            <div class="col-lg-offset-3 col-lg-9">
+                {{ field }}
+                {{ field.label }}
+            </div>
+        {% else %}
+            <label for="{{ field.html_name }}" class="col-lg-3 control-label">{{ field.label }}</label>
+            <div class="col-lg-9">
+                {{ field|add_class:"form-control" }}
+            </div>
+        {% endif %}
+    </div>
+{% endfor %}
