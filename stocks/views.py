@@ -1,8 +1,7 @@
-from django.views import generic
+from django.views.generic import ListView
 
 from .models import *
 
 
-class MasterIndexView(generic.ListView):
+class MasterList(ListView):
     model = Master
-    template_name = 'stocks/masters/index.html'

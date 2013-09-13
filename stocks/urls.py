@@ -6,5 +6,5 @@ from . import views
 
 urlpatterns = patterns('',
     url(r'^$', login_required(TemplateView.as_view(template_name='stocks/index.html'))),
-    url(r'^masters/$', login_required(views.MasterIndexView.as_view()))
+    url(r'^masters/$', login_required(views.MasterList.as_view()))
 )

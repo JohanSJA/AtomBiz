@@ -1,33 +1,33 @@
-{% extends "stocks/base.html" %}
+{% extends "accounts/base.html" %}
 
 {% block rows %}
     <ol class="breadcrumb">
-        <li><a href="/accounts/">Stocks</a></li>
-        <li class="active">Masters</li>
+        <li><a href="/accounts/">Accounts</a></li>
+        <li class="active">Sections</li>
     </ol>
 
     <div class="page-header">
-        <h1>Masters</h1>
+        <h1>Sections</h1>
     </div>
 
     <div class=" table-responsive">
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Code</th>
+                    <th>Number</th>
                     <th>Name</th>
-                    <th>Group</th>
                 </tr>
             </thead>
             <tbody>
-                {% for master in object_list %}
+                {% for section in object_list %}
                     <tr>
-                        <td>{{ master.code }}</td>
-                        <td>{{ master.name }}</td>
-                        <td>{{ master.group }}</td>
+                        <td>{{ section.number }}</td>
+                        <td>{{ section.name }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
+
+    <p>Total {{ object_list|length }} records</p>
 {% endblock %}

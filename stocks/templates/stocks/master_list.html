@@ -1,9 +1,9 @@
-{% extends "accounts/base.html" %}
+{% extends "stocks/base.html" %}
 
 {% block rows %}
     <ol class="breadcrumb">
-        <li><a href="/accounts/">Accounts</a></li>
-        <li class="active">Groups</li>
+        <li><a href="/accounts/">Stocks</a></li>
+        <li class="active">Masters</li>
     </ol>
 
     <div class="page-header">
@@ -30,4 +30,6 @@
             </tbody>
         </table>
     </div>
+
+    <p>Total {{ object_list|length }} records</p>
 {% endblock %}

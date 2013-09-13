@@ -3,29 +3,33 @@
 {% block rows %}
     <ol class="breadcrumb">
         <li><a href="/accounts/">Accounts</a></li>
-        <li class="active">Sections</li>
+        <li class="active">Groups</li>
     </ol>
 
     <div class="page-header">
-        <h1>Sections</h1>
+        <h1>Masters</h1>
     </div>
 
     <div class=" table-responsive">
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Number</th>
+                    <th>Code</th>
                     <th>Name</th>
+                    <th>Group</th>
                 </tr>
             </thead>
             <tbody>
-                {% for section in object_list %}
+                {% for master in object_list %}
                     <tr>
-                        <td>{{ section.number }}</td>
-                        <td>{{ section.name }}</td>
+                        <td>{{ master.code }}</td>
+                        <td>{{ master.name }}</td>
+                        <td>{{ master.group }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
+
+    <p>Total {{ object_list|length }} records</p>
 {% endblock %}
