@@ -2,21 +2,9 @@
 
 {% block rows %}
     <ol class="breadcrumb">
-        <li><a href="/stocks/">Stocks</a></li>
-        <li class="active">Categories</li>
+        <li><a href="{% url 'stocks' %}">Stocks</a></li>
+        <li><a href="{% url 'stocks_category_list' %}">Categories</a></li>
     </ol>
 
-    <div class="page-header">
-        <h1>Create new Category</h1>
-    </div>
-
-    <form method="post" class="form-horizontal" role="form">
-        {% csrf_token %}
-        {% include "bootstrap/form_horizontal.html" %}
-        <div class="form-group">
-            <div class="col-lg-offset-3 col-lg-9">
-                <input type="submit" value="Submit" class="btn btn-default" />
-            </div>
-        </div>
-    </form>
+    {% include "bootstrap/form_horizontal.html" %}
 {% endblock %}

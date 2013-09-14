@@ -2,13 +2,15 @@
 
 {% block rows %}
     <ol class="breadcrumb">
-        <li><a href="/stocks/">Stocks</a></li>
+        <li><a href="{% url 'stocks' %}">Stocks</a></li>
         <li class="active">Masters</li>
     </ol>
 
-    <div class="page-header">
-        <h1>Masters</h1>
-    </div>
+    <p>
+        <a href="{% url 'stocks_master_new' %}" class="btn btn-default">
+            <span class="glyphicon glyphicon-plus"></span> New
+        </a>
+    </p>
 
     <div class=" table-responsive">
         <table class="table table-striped">
@@ -16,15 +18,19 @@
                 <tr>
                     <th>Code</th>
                     <th>Name</th>
-                    <th>Group</th>
+                    <th>Category</th>
+                    <th>&nbsp;</th>
                 </tr>
             </thead>
             <tbody>
                 {% for master in object_list %}
                     <tr>
-                        <td>{{ master.code }}</td>
+                        <td><a href="{% url 'stocks_master_detail' master.id %}">{{ master.code }}</a></td>
                         <td>{{ master.name }}</td>
-                        <td>{{ master.group }}</td>
+                        <td>{{ master.category }}</td>
+                        <td>
+                            <a href="{% url 'stocks_master_delete' master.id %}"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>

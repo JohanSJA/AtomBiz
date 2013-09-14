@@ -1,0 +1,7 @@
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        Are you sure you want to delete {{ object }}?
+    </div>
+    <input type="submit" value="Submit" class="btn btn-default" />
+</form>

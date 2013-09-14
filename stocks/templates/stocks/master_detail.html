@@ -1,0 +1,27 @@
+{% extends "stocks/base.html" %}
+
+{% block rows %}
+    <ol class="breadcrumb">
+        <li><a href="{% url 'stocks' %}">Stocks</a></li>
+        <li><a href="{% url 'stocks_master_list' %}">Masters</a></li>
+    </ol>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <dl>
+                <dt>Code</dt>
+                <dd>{{ object.code }}</dd>
+                <dt>Name</dt>
+                <dd>{{ object.name }}</dd>
+                <dt>Description</dt>
+                <dd>{{ object.description }}</dd>
+                <dt>Category</dt>
+                <dd>{{ object.category }}</dd>
+            </dl>
+        </div>
+
+        <div class="col-lg-4">
+            <a href="{% url 'stocks_master_barcode_printing' object.id %}" target="_blank">Print Barcode</a>
+        </div>
+    </div>
+{% endblock %}

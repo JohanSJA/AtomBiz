@@ -1,4 +1,4 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
 
@@ -30,4 +30,23 @@ class MasterList(ListView):
 
 class MasterCreate(CreateView):
     model = Master
-    success_url = 'stocks_master_list'
+    success_url = reverse_lazy('stocks_master_list')
+
+
+class MasterDetail(DetailView):
+    model = Master
+
+
+class MasterUpdate(UpdateView):
+    model = Master
+    success_url = reverse_lazy('stocks_master_list')
+
+
+class MasterDelete(DeleteView):
+    model = Master
+    success_url = reverse_lazy('stocks_master_list')
+
+
+class MasterBarcodePrinting(DetailView):
+    model = Master
+    template_name = 'stocks/master_barcode_printing.html'

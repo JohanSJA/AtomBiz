@@ -1,17 +1,9 @@
-{% load widget_tweaks %}
-
-{% for field in form %}
-    <div class="form-group{% if form.errors %} hasError{% endif %}">
-        {% if field|widget_type == "checkboxinput" %}
-            <div class="col-lg-offset-3 col-lg-9">
-                {{ field }}
-                {{ field.label }}
-            </div>
-        {% else %}
-            <label for="{{ field.html_name }}" class="col-lg-3 control-label">{{ field.label }}</label>
-            <div class="col-lg-9">
-                {{ field|add_class:"form-control" }}
-            </div>
-        {% endif %}
+<form method="post" class="form-horizontal" role="form">
+    {% csrf_token %}
+    {% include "bootstrap/form_horizontal_snippet.html" %}
+    <div class="form-group">
+        <div class="col-lg-offset-3 col-lg-9">
+            <input type="submit" value="Submit" class="btn btn-default" />
+        </div>
     </div>
-{% endfor %}
+</form>

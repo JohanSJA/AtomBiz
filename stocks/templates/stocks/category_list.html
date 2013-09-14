@@ -2,13 +2,9 @@
 
 {% block rows %}
     <ol class="breadcrumb">
-        <li><a href="/stocks/">Stocks</a></li>
+        <li><a href="{% url 'stocks' %}">Stocks</a></li>
         <li class="active">Category</li>
     </ol>
-
-    <div class="page-header">
-        <h1>Categories</h1>
-    </div>
 
     <p>
         <a href="{% url 'stocks_category_new' %}" class="btn btn-default">
