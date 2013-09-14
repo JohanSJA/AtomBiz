@@ -1,0 +1,20 @@
+{% extends "stocks/base.html" %}
+
+{% block rows %}
+    <ol class="breadcrumb">
+        <li><a href="/stocks/">Stocks</a></li>
+        <li class="active">Categories</li>
+    </ol>
+
+    <div class="page-header">
+        <h1>Delete {{ object.name }}</h1>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            Are you sure you want to delete {{ object.name }}?
+        </div>
+        <input type="submit" value="Submit" class="btn btn-default" />
+    </form>
+{% endblock %}

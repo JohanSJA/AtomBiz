@@ -14,8 +14,11 @@
                 </div>
 
                 <div class="list-group">
-                    {% with "/stocks/masters/" as url %}
-                    <a href="{{ url }}" class="list-group-item{% if url in request.path %} active{% endif %}">Masters</a>
+                    {% with "/stocks/category" as url %}
+                        <a href="{{ url }}" class="list-group-item{% if url in request.path %} active{% endif %}">Categories</a>
+                    {% endwith %}
+                    {% with "/stocks/masters" as url %}
+                        <a href="{{ url }}" class="list-group-item{% if url in request.path %} active{% endif %}">Masters</a>
                     {% endwith %}
                 </div>
             </div>
