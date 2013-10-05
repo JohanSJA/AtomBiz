@@ -9,10 +9,10 @@
     <div class="row">
         <div class="col-lg-8">
             <dl>
+                <dt>Name</dt>
+                <dd><h1>{{ object.name }}</h1></dd>
                 <dt>Code</dt>
                 <dd>{{ object.code }}</dd>
-                <dt>Name</dt>
-                <dd>{{ object.name }}</dd>
                 <dt>Description</dt>
                 <dd>{{ object.description }}</dd>
                 <dt>Category</dt>
@@ -21,7 +21,8 @@
         </div>
 
         <div class="col-lg-4">
-            <a href="{% url 'stocks_master_barcode_printing' object.id %}" target="_blank">Print Barcode</a>
+            <h2>Actions</h2>
+            <a href="{% url 'stocks_master_barcode_printing' object.id %}" target="_blank" class="btn btn-default">Print Barcode</a>
         </div>
     </div>
 {% endblock %}

@@ -1,6 +1,12 @@
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
+from django.http import HttpResponse
+
+from cStringIO import StringIO
+
+import barcode
+from barcode.writer import ImageWriter
 
 from .models import *
 
@@ -50,3 +56,13 @@ class MasterDelete(DeleteView):
 class MasterBarcodePrinting(DetailView):
     model = Master
     template_name = 'stocks/master_barcode_printing.html'
+
+
+def barcode_image(request, pk):
+    ms = Master.objects.get(pk=pk)
+    bc = ms.barcode
+
+    io = StringIO()
+    code39 = barcode.get('code39', bc)
+    code39.write(io)
+    return HttpResponse(io.getvalue(), mimetype='image/svg+xml')

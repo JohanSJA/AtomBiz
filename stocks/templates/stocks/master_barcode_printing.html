@@ -1,5 +1,20 @@
-{% extends "bootstrap/base_printing.html" %}
+{% extends "base_printing.html" %}
+
+{% block page_style %}
+    <style>
+        .print-label {
+            font-size: 0.7em;
+            margin: 0px;
+        }
+    </style>
+{% endblock %}
 
 {% block project_rows %}
-    {{ object.barcode }}
+    <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-2">
+            <p class="print-label text-center"><strong>Cheantar Electronics</strong><br />Sdn. Bhd.</p>
+            <object data="{% url 'stocks_master_barcode' object.id %}" type="image/svg+xml"></object>
+        </div>
+    </div>
 {% endblock %}

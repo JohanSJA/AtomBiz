@@ -1,20 +1,38 @@
 {% extends "bootstrap/base.html" %}
 
-{% block project_style %}{% endblock %}
+{% block project_meta %}
+    <meta charset="utf-8">
+{% endblock %}
+
+{% block project_style %}
+    <style>
+        .container {
+            max-width: none !important;
+            width: 970px;
+        }
+    </style>
+    {% block app_style %}
+        {% block page_style %}{% endblock %}
+    {% endblock %}
+{% endblock %}
 
 {% block project_navbar %}{% endblock %}
 
 {% block project_container %}
-  <div class="container">
-    {% block project_rows %}
-      <div class="row">
-        <div class="col-lg-4 col-lg-offset-4">
-          <h1>Bootstrap starter template</h1>
-          <p>Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-        </div>
-      </div>
-    {% endblock %}
+    <div class="container">
+        {% block project_rows %}
+            <div class="row">
+                <div class="col-xs-4 col-xs-offset-4">
+                    <h1>Bootstrap starter template</h1>
+                    <p>
+                        Use this document as a way to quickly start any new project.
+                        <br>
+                        All you get is this text and a mostly barebones HTML document.
+                    </p>
+                </div>
+            </div>
+        {% endblock %}
 
-    {% block project_footer %}{% endblock %}
-  </div>
+        {% block project_footer %}{% endblock %}
+    </div>
 {% endblock %}

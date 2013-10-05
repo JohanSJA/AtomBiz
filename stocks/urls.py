@@ -15,5 +15,6 @@ urlpatterns = patterns('',
     url(r'^master/(?P<pk>\d+)$', login_required(views.MasterDetail.as_view()), name='stocks_master_detail'),
     url(r'^master/(?P<pk>\d+)/edit$', login_required(views.MasterUpdate.as_view()), name='stocks_master_edit'),
     url(r'^master/(?P<pk>\d+)/delete$', login_required(views.MasterDelete.as_view()), name='stocks_master_delete'),
+    url(r'^master/(?P<pk>\d+)/barcode.svg$', login_required(views.barcode_image), name='stocks_master_barcode'),
     url(r'^master/(?P<pk>\d+)/barcode_printing$', login_required(views.MasterBarcodePrinting.as_view()), name='stocks_master_barcode_printing')
 )
