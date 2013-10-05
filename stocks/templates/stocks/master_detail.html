@@ -22,6 +22,8 @@
 
         <div class="col-lg-4">
             <h2>Actions</h2>
+            <a href="{% url 'stocks_master_edit' object.id %}" class="btn btn-default">Edit</a>
+            <a href="{% url 'stocks_master_delete' object.id %}" class="btn btn-default">Delete</a>
             <a href="{% url 'stocks_master_barcode_printing' object.id %}" target="_blank" class="btn btn-default">Print Barcode</a>
         </div>
     </div>
